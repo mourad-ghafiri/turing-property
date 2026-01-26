@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Property - All is Property</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CSS Custom Properties for theming - set by JavaScript */
+        :root {
+            --range-track: #4b5563;
+            --range-thumb: #3b82f6;
+            --rating-inactive: #4b5563;
+            --rating-active: #facc15;
+            --rating-hover: #fde047;
+            --toggle-track: #4b5563;
+            --toggle-track-checked: #3b82f6;
+            --checkbox-bg: #374151;
+            --checkbox-border: #6b7280;
+            --checkbox-checked: #3b82f6;
+        }
+
+        /* Range slider styling */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--range-thumb);
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: var(--range-track);
+            border-radius: 4px;
+            height: 8px;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--range-thumb);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        input[type="range"]::-moz-range-track {
+            background: var(--range-track);
+            border-radius: 4px;
+            height: 8px;
+        }
+
+        /* Rating stars - colors controlled by CSS variables */
+        .star {
+            font-size: 2rem;
+            color: var(--rating-inactive);
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .star:hover {
+            color: var(--rating-hover);
+        }
+
+        .star.active {
+            color: var(--rating-active);
+        }
+
+        /* Toggle track styling via CSS variables */
+        .toggle-track {
+            background: var(--toggle-track);
+        }
+
+        .toggle-track.checked {
+            background: var(--toggle-track-checked);
+        }
+
+        /* Checkbox box styling via CSS variables */
+        .checkbox-box {
+            background: var(--checkbox-bg);
+            border-color: var(--checkbox-border);
+        }
+
+        .checkbox-box.checked {
+            background: var(--checkbox-checked);
+            border-color: var(--checkbox-checked);
+        }
+
+        /* Section chevron rotation */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 min-h-screen">
+    <!--
+    ============================================================================
+    ALL IS PROPERTY - The entire application is rendered from Properties
+    ============================================================================
+    This container is the only hardcoded HTML. Everything else - header, panels,
+    overlay, content - is defined as Properties and rendered by TuringApp.
+    -->
+    <div id="app">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="text-center text-gray-400">
+                <div class="text-4xl mb-4">T</div>
+                <p>Loading Turing Property App...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Entry Point -->
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

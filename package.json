@@ -1,0 +1,44 @@
+{
+  "name": "turing-property",
+  "version": "0.0.1",
+  "description": "A Turing-complete, declarative, expression-driven property system for modeling data structures with computed values and validation",
+  "author": "Mourad Ghafiri",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target browser && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "test": "bun test",
+    "prepublishOnly": "bun run build && bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "dependencies": {},
+  "keywords": [
+    "property",
+    "form",
+    "expression",
+    "turing",
+    "validation",
+    "schema",
+    "declarative",
+    "computed",
+    "constraints",
+    "form-builder"
+  ],
+  "license": "MIT"
+}
